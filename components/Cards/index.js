@@ -21,7 +21,7 @@
 let cardData = axios.get('https://lambda-times-backend.herokuapp.com/articles');
 console.log(cardData);
 
-function cardMaker() {
+function cardMaker(items) {
     let card = document.createElement('div');
     let headline = document.createElement('div');
     let author = document.createElement('div');
@@ -39,5 +39,9 @@ function cardMaker() {
     headline.classList.add('headline');
     author.classList.add('author');
     imgCont.classList.add('img-container');
+
+    headline.textContent = items.headline;
+    img.src = items.image;
+    name.textContent = items.author;
     
 }
