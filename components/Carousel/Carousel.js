@@ -47,7 +47,7 @@ function carouselMaker() {
   rightButton.textContent = '\u02C3';
   rightButton.style.opacity = 0.6;
 
-
+//Code that runs carousel loop
   var count = 0;
   img.src = pictures[count];
   leftButton.addEventListener('click', (e) => {
