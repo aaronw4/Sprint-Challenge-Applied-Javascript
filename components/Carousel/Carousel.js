@@ -17,3 +17,24 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselMaker(images) {
+  let carousel = document.createElement('div');
+  let leftButton = document.createElement('div');
+  let mountains = document.createElement('img');
+  let computer = document.createElement('img');
+  let trees = document.createElement('img');
+  let turntable = document.createElement('img');
+  let rightButton = document.createElement('div');
+
+  carousel.appendChild(leftButton);
+  carousel.appendChild(mountains);
+  carousel.appendChild(computer);
+  carousel.appendChild(trees);
+  carousel.appendChild(turntable);
+  carousel.appendChild(rightButton);
+
+  carousel.classList.add = 'carousel';
+  leftButton.classList.add = 'left-button';
+  rightButton.classList.add = 'right-button';
+}
