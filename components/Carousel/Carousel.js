@@ -41,6 +41,13 @@ function carouselMaker() {
   rightButton.classList.add('right-button');
   img.classList.add('display');
 
+//Designing the bottons
+  leftButton.textContent = '\u02C2';
+  leftButton.style.opacity = 0.6;
+  rightButton.textContent = '\u02C3';
+  rightButton.style.opacity = 0.6;
+
+
   var count = 0;
   img.src = pictures[count];
   leftButton.addEventListener('click', (e) => {
