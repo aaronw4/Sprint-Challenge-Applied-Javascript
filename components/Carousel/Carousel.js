@@ -46,19 +46,17 @@ function carouselMaker() {
   leftButton.addEventListener('click', (e) => {
     count = count -1;
     if (count < 0) {
-      count = 0;
+      count = 3;
     }
     img.src = pictures[count];
   })
   rightButton.addEventListener('click', (e) => {
     count = count +1;
     if (count > 3) {
-      count = 3;
+      count = 0;
     }
     img.src = pictures[count];
-  })
-  
-  
+  })  
 
   return carousel;
 };
