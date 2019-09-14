@@ -49,6 +49,8 @@ function carouselMaker() {
       count = 3;
     }
     img.src = pictures[count];
+    TweenMax.to('.carousel', 1, {left:0});
+    carousel.style.left = '1000px';
   })
   rightButton.addEventListener('click', (e) => {
     count = count +1;
@@ -56,6 +58,8 @@ function carouselMaker() {
       count = 0;
     }
     img.src = pictures[count];
+    TweenMax.to('.carousel', 1, {left:0});
+    carousel.style.left = '-1000px';
   })  
 
   return carousel;
