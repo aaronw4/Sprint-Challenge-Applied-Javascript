@@ -44,15 +44,25 @@ function cardMaker(items) {
     img.src = items.authorPhoto;
     name.textContent = items.authorName;
 
-    return items;
+    return card;
 }
 
 let cardsCont = document.querySelector('.cards-container');
 
 cardData.then(result => {
-//    cardsCont.appendChild(cardMaker(result.data.articles.bootstrap[0]));
-    
     result.data.articles.bootstrap.forEach(i => {
+        cardsCont.appendChild(cardMaker(i));
+    })
+    result.data.articles.javascript.forEach(i => {
+        cardsCont.appendChild(cardMaker(i));
+    })
+    result.data.articles.jquery.forEach(i => {
+        cardsCont.appendChild(cardMaker(i));
+    })
+    result.data.articles.node.forEach(i => {
+        cardsCont.appendChild(cardMaker(i));
+    })
+    result.data.articles.technology.forEach(i => {
         cardsCont.appendChild(cardMaker(i));
     })
 })
