@@ -41,7 +41,22 @@ function cardMaker(items) {
     imgCont.classList.add('img-container');
 
     headline.textContent = items.headline;
-    img.src = items.image;
-    name.textContent = items.author;
-    
+    img.src = items.authorPhoto;
+    name.textContent = items.authorName;
+
+    return items;
 }
+
+let cardsCont = document.querySelector('.cards-container');
+
+cardData.then(result => {
+//    cardsCont.appendChild(cardMaker(result.data.articles.bootstrap[0]));
+    
+    result.data.articles.bootstrap.forEach(i => {
+        cardsCont.appendChild(cardMaker(i));
+    })
+})
+
+.catch((err) => {
+    console.log(err);
+})
