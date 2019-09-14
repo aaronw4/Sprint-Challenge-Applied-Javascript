@@ -3,7 +3,8 @@
     2. You will need to grab a reference to all of the images
     3. Create a current index
     4. Those buttons are gonna need some click handlers.
-    5. Think of how you would animate this component. Make the cards slide in and out, or fade. It's up to you!
+    5. Think of how you would animate this component. 
+      Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
 
@@ -18,31 +19,49 @@
   </div>
 */
 
-function carouselMaker(images) {
+let pictures = [
+  "assets/carousel/mountains.jpeg",
+  "assets/carousel/computer.jpeg",
+  "assets/carousel/trees.jpeg",
+  "assets/carousel/turntable.jpeg"
+]
+
+function carouselMaker() {
   let carousel = document.createElement('div');
   let leftButton = document.createElement('div');
-  let mountains = document.createElement('img');
-  let computer = document.createElement('img');
-  let trees = document.createElement('img');
-  let turntable = document.createElement('img');
+  let img = document.createElement('img');  
   let rightButton = document.createElement('div');
 
   carousel.appendChild(leftButton);
-  carousel.appendChild(mountains);
-  carousel.appendChild(computer);
-  carousel.appendChild(trees);
-  carousel.appendChild(turntable);
+  carousel.appendChild(img);
   carousel.appendChild(rightButton);
 
-  carousel.classList.add = 'carousel';
-  leftButton.classList.add = 'left-button';
-  rightButton.classList.add = 'right-button';
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-button');
+  rightButton.classList.add('right-button');
+  img.classList.add('display');
 
-  mountains.src = "./assets/carousel/mountains.jpeg";
-  computer.src = "./assets/carousel/computer.jpeg";
-  trees.src = "./assets/carousel/trees.jpeg";
-  turntable.src = "./assets/carousel/turntable.jpeg";
+  var count = 0;
+  img.src = pictures[count];
+  leftButton.addEventListener('click', (e) => {
+    count = count -1;
+    if (count < 0) {
+      count = 0;
+    }
+    img.src = pictures[count];
+  })
+  rightButton.addEventListener('click', (e) => {
+    count = count +1;
+    if (count > 3) {
+      count = 3;
+    }
+    img.src = pictures[count];
+  })
+  
+  
 
-  return carousel
+  return carousel;
 };
 
+let carouselCont = document.querySelector('.carousel-container');
+carouselCont.appendChild(carouselMaker());

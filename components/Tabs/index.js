@@ -15,7 +15,7 @@ console.log(data);
 
 function tabMaker(items) {
     let tab = document.createElement('div');
-    tab.classList.add = 'tab';
+    tab.classList.add('tab');
     tab.textContent = items;
 
     return tab;

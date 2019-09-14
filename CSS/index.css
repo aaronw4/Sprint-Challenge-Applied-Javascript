@@ -299,7 +299,7 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.display {
   width: 100%;
-  display: none;
+  display: block;
 }
