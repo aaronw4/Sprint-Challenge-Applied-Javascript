@@ -56,8 +56,8 @@ function carouselMaker() {
       count = 3;
     }
     img.src = pictures[count];
-    TweenMax.to('.carousel', 1, {left:0});
-    carousel.style.left = '1000px';
+    TweenMax.to('.carousel', 1, {left:0}).delay(0.2);
+    carousel.style.left = '1500px';
   })
   rightButton.addEventListener('click', (e) => {
     count = count +1;
@@ -65,8 +65,8 @@ function carouselMaker() {
       count = 0;
     }
     img.src = pictures[count];
-    TweenMax.to('.carousel', 1, {left:0});
-    carousel.style.left = '-1000px';
+    TweenMax.to('.carousel', 1, {left:0}).delay(0.2);
+    carousel.style.left = '-1500px';
   })  
 
   return carousel;
